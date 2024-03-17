@@ -37,8 +37,6 @@
 		684501FD2BA6AB010050B74D /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 684501EA2BA6AB010050B74D /* SimpleLineIcons.ttf */; };
 		684501FE2BA6AB010050B74D /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 684501EB2BA6AB010050B74D /* FontAwesome6_Brands.ttf */; };
 		684501FF2BA6AB010050B74D /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 684501EC2BA6AB010050B74D /* MaterialIcons.ttf */; };
-		68BCD78F2BA775F4003B20E8 /* HappyMonkey.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68BCD78E2BA775F4003B20E8 /* HappyMonkey.ttf */; };
-		68BCD7922BA77617003B20E8 /* DidactGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68BCD7912BA77617003B20E8 /* DidactGothic.ttf */; };
 		6DEDB42231FB49DF9F6E90CE /* Jura-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F30B617624944203BD0AFFC3 /* Jura-Bold.ttf */; };
 		75E7AA8EC81A4DAE97C9FEFF /* Jura-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED9843E19D314E71BA4B793E /* Jura-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-Bookapp-BookappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Bookapp-BookappTests.a */; };
@@ -94,9 +92,6 @@
 		684501EA2BA6AB010050B74D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		684501EB2BA6AB010050B74D /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		684501EC2BA6AB010050B74D /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		68BCD78E2BA775F4003B20E8 /* HappyMonkey.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HappyMonkey.ttf; path = ../assets/fonts/HappyMonkey.ttf; sourceTree = "<group>"; };
-		68BCD7902BA77606003B20E8 /* HappyMonkey.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HappyMonkey.ttf; path = ../assets/fonts/HappyMonkey.ttf; sourceTree = "<group>"; };
-		68BCD7912BA77617003B20E8 /* DidactGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DidactGothic.ttf; path = ../assets/fonts/DidactGothic.ttf; sourceTree = "<group>"; };
 		7CA7FA453A03485EAA204FD6 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = Bookapp/BootSplash.storyboard; sourceTree = "<group>"; };
 		7E822A497AB34E29B356666D /* Kalnia-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Kalnia-Regular.ttf"; path = "../assets/fonts/Kalnia-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Bookapp/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -207,9 +202,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				68BCD7912BA77617003B20E8 /* DidactGothic.ttf */,
-				68BCD78E2BA775F4003B20E8 /* HappyMonkey.ttf */,
-				68BCD7902BA77606003B20E8 /* HappyMonkey.ttf */,
 				684501D92BA6AB010050B74D /* Fonts */,
 				13B07FAE1A68108700A75B9A /* Bookapp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -346,8 +338,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68BCD7922BA77617003B20E8 /* DidactGothic.ttf in Resources */,
-				68BCD78F2BA775F4003B20E8 /* HappyMonkey.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
