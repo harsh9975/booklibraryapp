@@ -13,8 +13,10 @@ import {fetchBooksFromSubjects} from '../../api/BookApi';
 import {
   commonStyles,
   gothic,
+  isAndroid,
   primaryColor,
   primaryColorShadow,
+  secTextColor,
   textColor,
   windowWidth,
 } from '../../consts/const';
@@ -63,6 +65,7 @@ export function HomeScreen({navigation}: any) {
           sections={booksBySubject}
           keyExtractor={(item, index) => item.title + index}
           renderItem={({}) => null}
+          stickySectionHeadersEnabled={false}
           renderSectionHeader={({section: {title, data}}) => (
             <>
               <View
@@ -145,14 +148,14 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   bookTitle: {
-    fontSize: 14,
+    fontSize: isAndroid ? 14 : 16,
     fontFamily: 'HappyMonkey',
     color: textColor,
   },
   bookAuthor: {
     fontSize: 14,
     fontFamily: gothic,
-    color: textColor,
+    color: secTextColor,
   },
   sectionHeader: {
     // fontWeight: 'bold',
