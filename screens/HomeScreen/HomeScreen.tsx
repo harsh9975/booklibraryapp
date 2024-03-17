@@ -169,5 +169,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderWidth: 2,
     borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

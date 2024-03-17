@@ -49,14 +49,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Kalnia-Bold.ttf</string>
-		<string>Kalnia-Regular.ttf</string>
 		<string>DidactGothic.ttf</string>
-		<string>Jura-Bold.ttf</string>
-		<string>Jura-Light.ttf</string>
-		<string>Jura-Medium.ttf</string>
-		<string>Jura-Regular.ttf</string>
-		<string>Jura-SemiBold.ttf</string>
 		<string>HappyMonkey.ttf</string>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>

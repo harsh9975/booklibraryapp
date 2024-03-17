@@ -107,6 +107,7 @@ export function SearchScreen({navigation}: SearchProps) {
                     coverId: item?.cover_i,
                     coverUrl: `https://covers.openlibrary.org/b/id/${item?.cover_i}-L.jpg`,
                     author: item?.author_name ? item?.author_name[0] : null,
+                    title: item?.title,
                   });
                 }}>
                 <View style={styles.cardContainer}>
