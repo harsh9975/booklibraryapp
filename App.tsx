@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -6,113 +7,103 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Platform, StatusBar} from 'react-native';
 
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
-  Colors,
-  DebugInstructions,
+  DetailsHeader,
   Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+  HomeHeader,
+  ListHeader,
+} from './components/Header/Header';
+import {AnimatedBootSplash} from './screens/AnimatedBootSplash';
+import {BookDetailScreen} from './screens/BookDetailScreen/BookDetailScreen';
+import {HomeScreen} from './screens/HomeScreen/HomeScreen';
+import {ListBooksScreen} from './screens/ListBooksScreen/ListBooksScreen';
+import {SearchScreen} from './screens/SearchScreen/SeachScreen';
+import {BookProvider} from './context/BookContext';
+import {BookmarkScreen} from './screens/BookmarkDetailScreen/BookmarkScreen';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  const [visible, setVisible] = React.useState(true);
+  React.useEffect(() => {
+    if (visible) {
+      StatusBar.setBarStyle('dark-content');
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+      if (Platform.OS === 'android') {
+        StatusBar.setBackgroundColor('transparent');
+        StatusBar.setTranslucent(true);
+      }
+    }
+  }, [visible]);
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+  const Stack = createNativeStackNavigator();
+
+  return visible ? (
+    <AnimatedBootSplash
+      onAnimationEnd={() => {
+        setVisible(false);
+      }}
+    />
+  ) : (
+    <>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
+      <BookProvider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Home"
+              component={HomeScreen}
+              options={{
+                // eslint-disable-next-line react/no-unstable-nested-components
+                header: ({navigation}) => (
+                  <HomeHeader navigation={navigation} />
+                ),
+              }}
+            />
+            <Stack.Screen
+              name="ListBook"
+              component={ListBooksScreen}
+              options={{
+                // eslint-disable-next-line react/no-unstable-nested-components
+                header: ({navigation, route}) => (
+                  <ListHeader navigation={navigation} route={route} />
+                ),
+              }}
+            />
+            <Stack.Screen
+              name="BookDetail"
+              component={BookDetailScreen}
+              options={{
+                // eslint-disable-next-line react/no-unstable-nested-components
+                header: ({navigation, route}) => (
+                  <DetailsHeader navigation={navigation} route={route} />
+                ),
+              }}
+            />
+            <Stack.Screen
+              name="Search"
+              component={SearchScreen}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Bookmark"
+              component={BookmarkScreen}
+              options={{
+                // eslint-disable-next-line react/no-unstable-nested-components
+                header: ({navigation, route}) => (
+                  <ListHeader navigation={navigation} route={route} />
+                ),
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </BookProvider>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

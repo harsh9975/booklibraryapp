@@ -1,0 +1,41 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/DidactGothic.ttf",
+      "sha1": "2a65aaeeada5705400f92468795623d345ed7274"
+    },
+    {
+      "path": "assets/fonts/HappyMonkey.ttf",
+      "sha1": "6e5727bafa73a9835472ba7e23d71bc442a82e27"
+    },
+    {
+      "path": "assets/fonts/Jura-Bold.ttf",
+      "sha1": "160a7b9d5d92f99b8d95a1d0e6e4b62dc7d6e885"
+    },
+    {
+      "path": "assets/fonts/Jura-Light.ttf",
+      "sha1": "6846c814b1fcba524d4178ba5e85ccce8a51cd12"
+    },
+    {
+      "path": "assets/fonts/Jura-Medium.ttf",
+      "sha1": "635047b44e06692b2060377ea5ed7843d384afec"
+    },
+    {
+      "path": "assets/fonts/Jura-Regular.ttf",
+      "sha1": "026e577eaee12a22045ea31da94d083479ec959c"
+    },
+    {
+      "path": "assets/fonts/Jura-SemiBold.ttf",
+      "sha1": "0fd1df75c9de86cf65634e1214ac2b7710f23941"
+    },
+    {
+      "path": "assets/fonts/Kalnia-Bold.ttf",
+      "sha1": "0b1a9f4b8f9aaaf043a89f1d920370d88403e8c2"
+    },
+    {
+      "path": "assets/fonts/Kalnia-Regular.ttf",
+      "sha1": "875b09ba5484b5543229e7f32959c0884c7c4762"
+    }
+  ]
+}
